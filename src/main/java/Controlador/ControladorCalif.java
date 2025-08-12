@@ -67,10 +67,10 @@ public class ControladorCalif {
               nota3 = 0;
               estado = "Fallido";
               JOptionPane.showMessageDialog(null, "Estudiante fallido.");
-          } else if (((nota1 + nota2 + nota3) / 3) >= 24){
+          } else if (((nota1 + nota2 + nota3) / 3) >= 14){
               estado = "Aprueba";
               JOptionPane.showMessageDialog(null, "Estudiante aprobado.");
-          } else if (((nota1 + nota2 + nota3) / 3) < 24){
+          } else if (((nota1 + nota2 + nota3) / 3) < 14){
               estado = "Fallido";
               JOptionPane.showMessageDialog(null, "Estudiante fallido.");   
           }
