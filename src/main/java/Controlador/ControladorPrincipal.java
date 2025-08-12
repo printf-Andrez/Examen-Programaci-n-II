@@ -11,8 +11,6 @@ import Vista.PantallaEstudiantes;
 
 import Vista.PantallaPrincipal;
 import java.util.List;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -47,21 +45,23 @@ public class ControladorPrincipal {
         this.pantallaCalificaciones = pantallaCalificaciones;
         this.pantallaEstudiantes = pantallaEstudiantes;
         this.listaEstudiantes = new ArrayList<>();
+        controladorAsig = new ControladorAsig(pantallaAsignaturas,
+        pantalla, pantallaEstudiantes, pantallaCalificaciones);
+        controladorEstu = new ControladorEstu(pantallaEstudiantes,
+        pantalla, this);
+        controladorCalif = new ControladorCalif(pantallaCalificaciones,
+        pantalla, this);
         this.pantalla.getAbrirAsignaturas().addActionListener(e -> {
-            controladorAsig = new ControladorAsig(pantallaAsignaturas,
-                    pantalla, pantallaEstudiantes, pantallaCalificaciones);
             pantallaAsignaturas.setLocationRelativeTo(null);
             pantallaAsignaturas.setVisible(true);
             pantalla.setVisible(false);
         });
         this.pantalla.getAbrirCalificaciones().addActionListener(e -> {
-            controladorCalif = new ControladorCalif(pantallaCalificaciones, pantalla, this);
             pantallaCalificaciones.setLocationRelativeTo(null);
             pantallaCalificaciones.setVisible(true);
             pantalla.setVisible(false);
         });
         this.pantalla.getAbrirEstudiantes().addActionListener(e -> {
-            controladorEstu = new ControladorEstu(pantallaEstudiantes, pantalla, this);
             pantallaEstudiantes.setLocationRelativeTo(null);
             pantallaEstudiantes.setVisible(true);
             pantalla.setVisible(false);
